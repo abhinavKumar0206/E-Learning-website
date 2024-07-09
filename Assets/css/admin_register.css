@@ -11,7 +11,7 @@ body {
     font-family: sans-serif;
     line-height: 1.5;
     min-height: 100vh;
-    background-image:url("admin.png");
+    background-image:url("../images/admin.png");
     background-size: cover; /* Cover the entire background */
     background-position: center; /* Center the background image */
     background-repeat: no-repeat; /* Prevent the image from repeating */

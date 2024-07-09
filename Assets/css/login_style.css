@@ -6,7 +6,7 @@ body {
     font-family: sans-serif;
     line-height: 1.5;
     min-height: 100vh;
-    background-image:url("Designer.jpg");
+    background-image:url("../images/Designer.jpg");
     background-size: cover; /* Cover the entire background */
     background-position: center; /* Center the background image */
     background-repeat: no-repeat; /* Prevent the image from repeating */
