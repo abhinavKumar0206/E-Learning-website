@@ -1,0 +1,147 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-image: url('Designer.jpg');
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100vh;
+    color: #333;
+}
+
+header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px; /* Increased padding for the title bar */
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.logo-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    position: relative;
+}
+
+.logo {
+    height: 100px; /* Ensuring the logo is correctly sized */
+    width: auto;
+    margin-right: 20px;
+    position: absolute;
+    left: 20px;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin: 0;
+}
+
+.chat-icon {
+    position: absolute;
+    top: 130px; /* Adjusted to be below the title bar */
+    right: 20px;
+    cursor: pointer;
+}
+
+.chat-icon img {
+    height: 40px;
+    width: 40px;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    width: 100%;
+}
+
+.form-container {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    max-width: 600px;
+    margin-top: 20px;
+}
+
+.subject-id-box {
+    width: 100%;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border: 2px solid #3498db;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: white;
+}
+
+.subject-id-box label {
+    font-size: 1.2em;
+}
+
+.subject-id-box select {
+    width: 100%;
+    padding: 10px;
+    font-size: 1.2em;
+    border: 1px solid #3498db;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.query-box {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+textarea {
+    width: 100%;
+    height: 200px;
+    padding: 15px;
+    font-size: 1.2em;
+    border: 2px solid #3498db;
+    border-radius: 5px;
+    resize: none;
+    margin-bottom: 10px;
+}
+
+textarea:disabled {
+    background-color: #f0f0f0;
+}
+
+button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:disabled {
+    background-color: #ccc;
+}
+
+button:hover:enabled {
+    font-weight: bold;
+    text-decoration: underline;
+    background-color: #2980b9;
+}
