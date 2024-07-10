@@ -62,7 +62,11 @@ body {
 .sidebar-menu li:hover {
     background-color: #007bff;
 }
-
+.logout-btn{
+    color: #fefdfd;
+    background-color: #0a0a0a00;
+    
+}
 
 .main-content {
     flex: 1;

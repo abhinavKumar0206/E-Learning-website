@@ -18,9 +18,9 @@
                 <li><a href="courses.html">Courses</a></li><br>
                 <li><a href="#">Mock Test</a></li><br>
                 <li><a href="#">Online Test</a></li><br>
-                <li><a href="#">F&Q</a></li><br><br><br><br><br><br><br><br><br><br>
-                <li><a href="Admin_page.html">Log Out</a></li><br>
-
+                <li> <button class="logout-btn">
+                    Logout
+               </button></li>
             </ul>
             
         </nav>
@@ -34,10 +34,6 @@
             </header>
             <div class="content">
 
-                <div class="card">
-                    <h3>Mr. Akshay Kumar Garg</h3>
-                    <p>Officer - L&D (IOCL)</p>
-                </div>
                 <div class="cards">
                     <div class="card">
                         <h3><a href="next.html">New Entries</a></h3>
@@ -58,6 +54,13 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+    <script>
+        const logoutBtn=document.querySelector(".logout-btn")
+        logoutBtn.addEventListener("click",()=>{
+            window.location.replace("index.html")
+        });
+    </script>
 </body>
 
 </html>

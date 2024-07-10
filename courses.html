@@ -20,12 +20,11 @@
         <nav>
             <ul>
                 
-                    <button id="logout-button" disabled>
-                        <a href="index.html">Logout</a>
-                    <!--Logout-->
+                    <button class="logout-btn">
+                        Logout
                    </button>
                     <button>
-                        <a href="about.html">About</a>
+                        <a href="discussion.html">Ask your doubts</a>
                     </button>
                     <button>
                     <a href="contact.html">Contact</a>
@@ -141,6 +140,13 @@
     <footer>
         <p> &copy; 2024 Akshay Udbhav E-Learning. All rights reserved.</p>
     </footer>
+
+    <script>
+        const logoutBtn=document.querySelector(".logout-btn")
+        logoutBtn.addEventListener("click",()=>{
+            window.location.replace("index.html")
+        })
+    </script>
 
 </body>
 

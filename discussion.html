@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FAQs</title>
     <link rel="stylesheet" href="/Assets/css/discussion.css">
 </head>
-
 <body>
     <header>
         <div class="logo-title">
@@ -16,13 +14,20 @@
         </div>
     </header>
 
-    <!-- Insert chatbot here -->
     <div class="chat-icon" onclick="window.location.href='chatbot.html'">
         <img src="/Assets/images/download.png" alt="Chat Icon">
     </div>
 
     <main>
-        <div class="form-container">
+        <div class="form-container" id="login-form">
+            <h2>Login</h2>
+            <input type="text" id="username" placeholder="Username" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <button id="login-btn">Login</button>
+            <div id="login-error" style="color: red; display: none;">Invalid username or password</div>
+        </div>
+
+        <div class="form-container" id="discussion-form" style="display: none;">
             <div class="subject-id-box">
                 <select name="subject" id="subject-id">
                     <option value="">Select your subject</option>
@@ -44,13 +49,45 @@
     </main>
 
     <script>
+        document.getElementById('login-btn').addEventListener('click', async function () {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            const data = {
+                username,
+                password
+            };
+
+            try {
+                const response = await fetch('/login', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                });
+
+                const result = await response.json();
+
+                if (response.ok) {
+                    document.getElementById('student-id').value = result.student_id;
+                    document.getElementById('login-form').style.display = 'none';
+                    document.getElementById('discussion-form').style.display = 'block';
+                } else {
+                    document.getElementById('login-error').style.display = 'block';
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                document.getElementById('login-error').style.display = 'block';
+            }
+        });
+
         document.getElementById('subject-id').addEventListener('change', async function () {
             const subjectId = this.value;
             const employeeDropdown = document.getElementById('employee-id');
             const queryBox = document.getElementById('query-box');
             const submitBtn = document.getElementById('submit-btn');
 
-            // Reset dropdown, textarea, and button
             employeeDropdown.disabled = true;
             queryBox.disabled = true;
             submitBtn.disabled = true;
@@ -61,14 +98,10 @@
                     const response = await fetch(`/employees/${subjectId}`);
                     const employees = await response.json();
                     
-                    // Log the response for debugging
-                    console.log('Fetched Employees:', employees);
-
-                    // Populate new options
                     employees.forEach(employee => {
                         const option = document.createElement('option');
-                        option.value = employee.employee_id; // Assuming employee.name is available
-                        option.textContent = employee.employee_id;
+                        option.value = employee.employee_id;
+                        option.textContent = employee.name/*.password*/;
                         employeeDropdown.appendChild(option);
                     });
 
@@ -108,7 +141,7 @@
                 student_id: studentId,
                 employee_id: employeeId,
                 question: queryBox.value,
-                asked_date: new Date()
+                asked_date: new Date().toISOString().slice(0, 10)
             };
 
             try {
@@ -139,13 +172,6 @@
             document.getElementById('employee-id').innerHTML = '<option value="">Select an employee</option>';
             this.disabled = true;
         });
-
-        // Mock login - replace with actual login logic
-        window.onload = function () {
-            // Assume student ID is 1 for demo purposes
-            document.getElementById('student-id').value = '1';
-        };
     </script>
 </body>
-
 </html>

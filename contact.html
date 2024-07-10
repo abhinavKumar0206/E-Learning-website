@@ -1,69 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Akshay Udbhav E-Learning | Contact Us</title>
+    <title>Contact Form</title>
     <link rel="stylesheet" href="Assets/css/contact.css">
-
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" /> -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
-
 <body>
-    <header>
-        <div class="logo-title">
-            <img src="Assets/images/logo.jpeg" alt="Logo" class="logo">
-            <h1>Akshay Udbhav E-Learning</h1>
+    <div class="contact-container">
+        <form action="https://api.web3forms.com/submit" method="POST" class="contact-left" id="contact-form">
+            <div class="contact-left-title">
+                <h2> Get In Touch </h2>
+                <hr>
+            </div>
+            <input type="hidden" name="access_key" value="bf7fbe49-a288-44aa-8fa3-39cc76c47ac9">
+            <input type="text" name="name" placeholder="Your Name" class="contact-inputs" required>
+            <input type="email" name="email" placeholder="Your Email" class="contact-inputs" required>
+            <textarea name="message" placeholder="Your Message" class="contact-inputs" required></textarea>
+            <button type="submit">Submit </button>
+        </form>
+        <div class="contact-right">
+            <img src="Assets/images/right_img.png" alt="Right Image">
         </div>
-        <nav>
-            <ul>
-                <li><a href="courses.html">Back</a></li>
-                <li><a href="#about">About</a></li>
-                <!-- <li><a href="#T&C">Terms & Conditions</a></li> -->
-            </ul>
-        </nav>
-    </header>
-
-    <main>
-        <section class="hero">
-            <h1>Contact Us</h1>
-        </section>
-        <section class="para">
-            <p>Leave us a message and we'll get back to you soon!</p>
-        </section>
-        <section class="contact-form">
-            <form id="contact-form">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required><br><br>
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required><br><br>
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" required></textarea><br><br>
-                <button type="submit">Send Message</button>
-            </form>
-        </section>
-        <section class="social-media">
-            <h2>Follow us on social media:</h2>
-            <ul>
-                <li><a href="#" target="_blank"><i class="fa-brands fa-square-facebook"></i></a></li>
-                <li><a href="#" target="_blank"><i class="fa-brands fa-square-twitter"></i></a></li>
-                <li><a href="#" target="_blank"><i class="fa-brands fa-square-instagram"></i></a></li>
-            </ul>
-        </section>
-    </main>
-
-
-
-    <!-- Footer Section -->
-    <footer>
-        <p>&copy; 2024 Akshay Udbhav E-Learning. All rights reserved.</p>
-    </footer>
-
-    <script src="contactscript.js"></script>
+    </div>
+    
 </body>
-
 </html>

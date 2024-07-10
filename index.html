@@ -27,7 +27,7 @@
         </div>
         <div id="login-dialog" class="hidden">
             <div class="login-box">
-                <button class="login-option"><a href="user_login.html">User Login<a></button>
+                <button id="user-login-btn" class="login-option"><a href="user_login.html">User Login<a></button>
                 <button class="login-option"><a href="admin_login.html">Admin Login</a></button>
             </div>
         </div>
@@ -44,6 +44,10 @@
                     dialog.style.display = 'none';
                     loginBtn.style.display = 'block';
                 }
+            });
+
+            document.getElementById(user-login-btn).addEventListener('click',()=>{
+                window.location.reload()
             });
 
         </script>
